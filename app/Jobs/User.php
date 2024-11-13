@@ -25,10 +25,8 @@ class User implements ShouldQueue
      */
     public function handle(): void
     {
-        for ($i = 0; $i < 300000; $i++) {
-            Job::create([
-                'user_name' => $this->data . ' ' . $i,
-            ]);
+        for ($i = 1; $i < 300000; $i++) {
+            Job::create(['user_name' => $this->data . ' - ' . $i]);
         }
     }
 }

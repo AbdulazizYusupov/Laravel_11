@@ -22,7 +22,9 @@ class JobController extends Controller
      */
     public function create(Request $request)
     {
-
+        $name = $request->user_name;
+        User::dispatch($name);
+        return redirect()->route('job.index');
     }
 
     /**
